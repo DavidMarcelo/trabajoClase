@@ -1,5 +1,3 @@
-from django.shortcuts import render
-# Create your views here.
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 
@@ -13,7 +11,11 @@ from example.models import Example
 from example.serializer import ExampleSerializers
 
 class ExampleList(APIView):
+    # METODO GET PARA SOLICITAR INFO
     def get(self, request, format=None):
         queryset = Example.objects.filter(delete = False)
         serializer = ExampleSerializers(queryset)
         return Response(serializer.data)
+
+
+# Create your views here.

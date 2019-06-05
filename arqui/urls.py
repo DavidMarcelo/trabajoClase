@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^',include(router.urls)),
     re_path(r'^api/v1/login', include('Login.urls')),
-    re_path(r'^api/v1/actividad', include('Login.urls'))
+    re_path(r'^api/v1/example', include('Login.urls'))
 ]
